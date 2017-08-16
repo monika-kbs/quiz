@@ -1,0 +1,38 @@
+form#loginForm {
+    padding: 216px;
+}
+label.error{
+	color: red;
+}
+.btn-primary {
+    float: right;
+}
+#add_new{
+	float: right;
+}
+#modal-add-new{
+	width: 1108px;
+}
+#save{
+	float: right;
+}
+#total_teacher{
+	width: 200px;
+}
+#total_students{
+	width: 200px;
+    margin-left: 230px;
+    margin-top: -110px;
+}
+#total_quiz{
+	width: 200px;
+	margin-left: 460px;
+    margin-top: -110px;
+}
+#total_aa{
+	width: 200px;
+	margin-left: 694px;
+    margin-top: -110px;
+}
+
+
