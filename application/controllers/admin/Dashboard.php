@@ -6,6 +6,9 @@ class Dashboard extends App_Controller{
         parent ::__construct();  
         is_logged_in();             
     }
+    /*
+    Load admin dashboard
+     */
     public function index(){	    
     	return $this->render('admin/dashboard');
     }
