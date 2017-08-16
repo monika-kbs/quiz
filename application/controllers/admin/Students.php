@@ -9,7 +9,4 @@ class Students extends App_Controller{
     public function index(){		
 	   return $this->render('admin/students');
     }
-    public function addStudent() {
-    	
-    }
 }    

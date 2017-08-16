@@ -1,7 +1,7 @@
-<?php echo form_open('student/allQuiz/back', 'name="myForm"'); ?>
+<?php echo form_open('student/Quiz/back', 'name="myForm"'); ?>
 <button type="submit" class="btn btn-primary"  name="back" >Back</button>
 <?php form_close(); ?>
-<?php echo form_open('student/allQuiz/quiz', 'name="myForm"'); ?>
+<?php echo form_open('student/quiz', 'name="myForm"'); ?>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>

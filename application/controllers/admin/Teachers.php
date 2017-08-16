@@ -10,11 +10,15 @@ class Teachers extends App_Controller{
 	   return $this->render('admin/teachers');
     }
     public function blockTeacher() {
-    	if(isset($_POST['block_teacher'])){    
-             $status = $this->input->post('block_teacher');
-    		 $id = $this->input->post('id');
+        if(isset($_POST['block_teacher'])){ 
+            echo $status = $this->input->post('block_teacher');
+             echo $id = $this->input->post('id');
              $query = $this->db->get_where('users', array('status' => $status))->result();
-             foreach($query as $row){
+             echo "<pre>";
+             print_r($query);
+             echo "</pre>";
+             die;
+            foreach($query as $row){
                 $status_var = $row->status;
                 if($status_var=='0'){
                   $status_state=1;
@@ -26,9 +30,9 @@ class Teachers extends App_Controller{
                 $this->db->where('id', $id);
                 $update = $this->db->update('users');
                 if($update){
-                  return redirect(base_url() . 'teacher/teachers' );
+                  // return redirect(base_url() . 'admin/dashboard/teachers' );
                 }
-             }
-         }
+            }
+        }
     }
 }  

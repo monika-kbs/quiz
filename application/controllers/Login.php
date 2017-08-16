@@ -43,13 +43,13 @@ class Login extends App_Controller {
          $user = $this->db->get_where('ci_sessions', array('data' => $user_id))->result();
 
           if (count($query) == "" && $users_type == 3){
-              return redirect(base_url() . 'admin/index' );
+              return redirect(base_url() . 'admin/dashboard' );
           }           
           elseif(count($query) == "" && $users_type == 2){
-              return redirect(base_url() . 'login' );
+              return redirect(base_url() . 'teacher/Dashboard' );
           }
           elseif(count($query) == "" && $users_type == 1){
-              return redirect(base_url() . 'login' );
+              return redirect(base_url() . 'student/Quiz' );
           }
           else{
             return redirect(base_url() . 'login' );

@@ -12,11 +12,4 @@ class Dashboard extends App_Controller{
     public function index(){	    
     	return $this->render('admin/dashboard');
     }
-    public function students() {
-    	return $this->render('admin/students');
-    }
-     public function teachers() {
-    	return $this->render('admin/students');
-    }
-
 }

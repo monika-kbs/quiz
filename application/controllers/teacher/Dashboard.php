@@ -1,20 +1,30 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-class Mailer extends CI_Controller {	
-	 public function sendMail() {
+if(!defined('BASEPATH') ) exit('No direct script access allowed');
+
+class Dashboard extends App_Controller{   
+    public function __construct(){
+        parent ::__construct(); 
+        is_logged_in();            
+    }
+    public function index(){   
+    return $this->render('teacher/dashboard');     
+    }
+    public function back(){      
+       return redirect(base_url() . 'student/Quiz' );
+    }
+    public function mailer() {
         require_once "vendor/autoload.php";
         $mail = new PHPMailer;
         $mail->SMTPDebug = 3;                              // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = ' smtp.mailtrap.io';  // Specify main and backup SMTP servers
+        $mail->Host = 'ssl://smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'b9e1e1958de84c';                 // SMTP username
-        $mail->Password = '5d981197e72897';                           // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Username = 'monii5686@gmail.com';                 // SMTP username
+        $mail->Password = 'kindle@123';                           // SMTP password
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;                                   // TCP port to connect to
         $mail->setFrom('monii5686@gmail.com', 'Mailer');
         $mail->addAddress('test@yopmail.com', 'Joe User');     // Add a recipient
-        // $mail->addReplyTo('rafaela.dooley@smith.com', 'Information');
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
@@ -28,4 +38,4 @@ class Mailer extends CI_Controller {
             echo 'Message has been sent';
         }
     }
-}		
+}  

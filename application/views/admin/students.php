@@ -1,4 +1,41 @@
-<table class="table table-striped table-hover" id="usersTable" cellspacing="0" width="100%">
+<div class="container" id="modal-add-new">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add_new">Add New</button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Student</h4>
+        </div>
+      <?php echo form_open('teacher/quiz/addQuiz', ['name' => 'addQuiz', 'id' => 'quizForm']); ?>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+           <div class="form-group">
+            <label for="usr">Email:</label>
+            <input type="text" class="form-control" id="email" name="email">
+          </div>
+           <div class="form-group">
+            <label for="usr">Password:</label>
+            <input type="text" class="form-control" id="password" name="password">
+          </div>
+          <div class="form-group">
+            <label for="usr">Dob</label>
+            <input type="text" class="form-control" id="dob" name="dob">
+          </div>
+        <div class="modal-footer">
+          <button type="submit"  class="btn btn-primary">Add Quiz</button>
+        </div>
+      </div>
+        <?php echo form_close(); ?>
+      </div>      
+    </div>
+  </div> 
+</div>
+
+  <table class="table table-striped table-hover" id="usersTable" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>ID</th>

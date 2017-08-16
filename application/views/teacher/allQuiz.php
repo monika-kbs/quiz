@@ -7,7 +7,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add New Quiz</h4>
         </div>
-      <?php echo form_open('student/allQuiz/quiz', ['name' => 'addQuiz', 'id' => 'quizForm']); ?>
+      <?php echo form_open('teacher/quiz/addQuiz', ['name' => 'addQuiz', 'id' => 'quizForm']); ?>
         <div class="modal-body">
           <div class="form-group">
             <label for="usr">Name:</label>
@@ -50,7 +50,7 @@
     </div>
   </div> 
 </div>
-<?php echo form_open('student/allQuiz/quiz', 'name="myForm"'); ?>
+
 <table id="quizTable" class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -74,9 +74,8 @@
       <td><?php echo $row->quiz_name; ?></td>
       <td><?php echo $row->start_time; ?></td>
       <td><?php echo $row->end_time; ?></td>
-      <td><a href="<?php echo base_url() ?>student/allQuiz/quiz?id=<?php echo $row->quiz_id;?>">Active</a></td>
+      <td><a href="">Active</a></td>
     </tr>
   <?php endforeach;?>
   </tbody>
 </table> 
-<?php echo form_close(); ?>

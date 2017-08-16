@@ -15,8 +15,17 @@ if(!function_exists('auth')){
 	function auth(){
 	  $CI =& get_instance();
       $is_logged_in = $CI->session->userdata('user_id');
-      if( !$is_logged_in == ""){
+      $users_type = $CI->session->userdata('users_type');
+      if( !$is_logged_in == "" && $users_type == 3){
           redirect(base_url() . 'admin/dashboard');
+          die();  
+      }
+      elseif(!$is_logged_in == "" && $users_type == 2){
+      	  redirect(base_url() . 'teacher/dashboard');
+          die();  
+      }
+      elseif(!$is_logged_in == "" && $users_type == 1){
+      	  redirect(base_url() . 'student/AllQuiz');
           die();  
       }
 	}
