@@ -13,7 +13,8 @@
    <li class="<?php if(current_url()== site_url("teacher/quiz")) { echo 'list active'; } else{ echo 'list'; } ?>"><a href="<?php echo base_url() ?>teacher/quiz">Quiz</a></li>
 
    <?php elseif($users_type == 1):?>
-   <li class="<?php if(current_url()== site_url("student/Quiz")) { echo 'list active'; } else{ echo 'list'; } ?>"><a href="<?php echo base_url() ?>student/Quiz">Quiz</a></li>
+    <li class="<?php if(current_url() == site_url("student/dashboard")) { echo 'list active'; } else{ echo 'list'; }?>"><a href="<?php echo base_url() ?>student/dashboard">Dashboard</a></li> 
+   <li class="<?php if(current_url()== site_url("student/AllQuiz")) { echo 'list active'; } else{ echo 'list'; } ?>"><a href="<?php echo base_url() ?>student/AllQuiz">Quiz</a></li>
   <?php endif; ?>
   </p>
 </aside>

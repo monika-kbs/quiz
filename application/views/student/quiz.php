@@ -1,7 +1,4 @@
-<?php echo form_open('student/Quiz/back', 'name="myForm"'); ?>
-<button type="submit" class="btn btn-primary"  name="back" >Back</button>
-<?php form_close(); ?>
-<?php echo form_open('student/quiz', 'name="myForm"'); ?>
+<a href="<?php echo(base_url() . 'student/quiz/back' )?>" class="btn btn-primary" >Back</a>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -10,8 +7,9 @@
     </tr>
   </thead>
   <tbody>
-  <?php 
-     $query = $this->db->get_where('questions', array('quiz_id' => 2));
+  <?php echo form_open('student/quiz/store/', 'name="myForm"'); ?>
+  <?php  
+     $query = $this->db->get_where('questions', array('quiz_id' => 330 ));
      foreach ($query->result() as $row): ?>
     <tr>
       <td><?php echo $row->ques_id; ?></td>
@@ -19,31 +17,30 @@
     </tr>
     <tr>
       <td></td>
-      <td>A  <input type="radio" name="gender" value="male" checked>Option A<br></td>
+      <td>A  <input type="radio" name="option[<?php echo $row->ques_id; ?>]" value="A" /><?php echo $row->A; ?> <br></td>
     </tr>
     <tr>
       <td></td>
-      <td>B  <input type="radio" name="gender" value="male" checked>Option B<br></td>
+      <td>B  <input type="radio" name="option[<?php echo $row->ques_id; ?>]" value="B" /><?php echo $row->B; ?> <br></td>
     </tr>
     <tr>
       <td></td>
-      <td>C  <input type="radio" name="gender" value="male" checked>Option C<br></td>
+      <td>C  <input type="radio" name="option[<?php echo $row->ques_id; ?>]" value="C" /><?php echo $row->C; ?> <br></td>
     </tr>
     <tr>
       <td></td>
-      <td>D  <label><input type="radio" name="gender" value="male" checked>Option D<br></label>
-      <button class="btn btn_primary" type="submit" name="save" id="save" >Save</button></td>   
+      <td>D <input type="radio" name="option[<?php echo $row->ques_id; ?>]" value="D" /><?php echo $row->D; ?> <br>
     </tr>
-  <?php endforeach;?>
+   <?php endforeach;?>
     <tr>
       <td></td>
       <td><button class="btn btn-primary" type="submit" name="submit" >Submit</button></td>
     </tr>
-  </tbody>
+  <?php echo form_close(); ?>
+   </tbody>
 
 </table> 
 
-<?php echo form_close(); ?>
 
 
  

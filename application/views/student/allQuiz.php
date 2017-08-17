@@ -1,4 +1,4 @@
-<?php echo form_open('student/quiz', 'name="myForm"'); ?>
+<?php echo form_open('student/quiz/store', ['name'=>'allQuiz']); ?>
 <table id="quizTable" class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -22,7 +22,7 @@
       <td><?php echo $row->quiz_name; ?></td>
       <td><?php echo $row->start_time; ?></td>
       <td><?php echo $row->end_time; ?></td>
-      <td><a href="<?php echo base_url() ?>student/quiz/quiz?id=<?php echo $row->quiz_id;?>">Active</a></td>
+      <td><input type="submit" data-id="<?php echo $row->quiz_id;?>" value="Active" name="active" ></td>
     </tr>
   <?php endforeach;?>
   </tbody>

@@ -3,7 +3,7 @@ if(!defined('BASEPATH') ) exit('No direct script access allowed');
 class Login extends App_Controller {  
   public function __construct(){
       parent ::__construct(); 
-        auth();
+        auth();   
   }
     /**
      * Check Authentication
@@ -49,7 +49,7 @@ class Login extends App_Controller {
               return redirect(base_url() . 'teacher/Dashboard' );
           }
           elseif(count($query) == "" && $users_type == 1){
-              return redirect(base_url() . 'student/Quiz' );
+              return redirect(base_url() . 'student/dashboard' );
           }
           else{
             return redirect(base_url() . 'login' );

@@ -7,11 +7,11 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add Student</h4>
         </div>
-      <?php echo form_open('admin/students/addStudent', ['name' => 'addQuiz', 'id' => 'quizForm']); ?>
+      <?php echo form_open('admin/students/store', ['name' => 'addQuiz', 'id' => 'student_valid']); ?>
         <div class="modal-body">
           <div class="form-group">
             <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="Student_name" name="name">
+            <input type="text" class="form-control" id="name" name="name">
           </div>
            <div class="form-group">
             <label for="usr">Email:</label>
@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
             <label for="usr">Dob</label>
-            <input type="text" class="form-control" id="studentDob" name="dob">
+            <input type="text" class="form-control" id="dob" name="dob">
           </div>
           <div class="form-group">
             <label for="usr">Roll No</label>
@@ -70,7 +70,9 @@
       <td><?php echo $row->email; ?></td>
       <td><?php echo $row->dob; ?></td>
       <td><?php echo $row->roll_no; ?></td>
-      <td><button type="submit" name="block">Block</button></td>
+      <td><a href="<?php echo base_url('admin/students/block?id='.$row->id); ?>" >Block</a></td>
+      <td><a href="<?php echo base_url('admin/students/update?id='.$row->id); ?>" >Update</a></td>
+      <td><a href="<?php echo base_url('admin/students/delete?id='.$row->id); ?>" >Delete</a></td>
     </tr>
   <?php endforeach;?>
   </tbody>

@@ -9,22 +9,46 @@ class Teachers extends App_Controller{
     public function index(){		
 	   return $this->render('admin/teachers');
     }
-    public function addTeacher() {
+
+    public function store() {
+       $data = array(
+        'users_type' => 2,
+        'name' =>  $this->input->post('name'),
+        'email' =>  $this->input->post('email'),
+        'password' => $this->input->post('password'),
+        'dob' => $this->input->post('teacherdob'),
+        'created_at' => date("Y-m-d H:i:s")
+        );
+      $this->db->insert('users', $data);
+      return redirect(base_url() . 'admin/teachers' ); 
+    }
+
+    public function delete($id="") {
+        $id = $this->input->get('id');
+        $this->db->where('id', $id);
+        $this->db->delete('users');
+        return redirect(base_url() . 'admin/teachers' );  
+    }
+    public function form($id){
+        $this->id = $this->uri->segment(4);
+        return  $this->render('admin/form');
+    }
+
+    public function update() {  
+        $id = 24;
+       // $id = $this->uri->segment(4);   
        $data = array(
         'name' =>  $this->input->post('name'),
         'email' =>  $this->input->post('email'),
         'password' => $this->input->post('password'),
-        'dob' => $this->input->post('dob')
-        );
-       echo "<pre>";
-       print_r($data);
-       echo "</pre>";
-       die;
-      $this->db->insert('users', $data);
-      return redirect(base_url() . 'teacher/quiz' ); 
+        'dob' => $this->input->post('tdob')
+        );      
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
+        return redirect(base_url() . 'admin/teachers' );          
     }
 
-    public function blockTeacher() {
+    public function block() {
         if(isset($_POST['block_teacher'])){ 
             echo $status = $this->input->post('block_teacher');
              echo $id = $this->input->post('id');

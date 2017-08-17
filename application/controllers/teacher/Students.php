@@ -7,6 +7,6 @@ class Students extends App_Controller{
          is_logged_in();            
     }
     public function index(){		
-	   return $this->render('admin/students');
+	   return $this->render('teacher/students');
     }
 }    

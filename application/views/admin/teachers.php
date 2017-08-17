@@ -7,23 +7,23 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add New Teacher</h4>
         </div>
-      <?php echo form_open('admin/teachers/addTeacher', ['name' => 'addTeacher', 'id' => 'quizForm']); ?>
+      <?php echo form_open('admin/teachers/store', ['name' => 'addTeacher', 'id' => 'teacher_valid']); ?>
         <div class="modal-body">
           <div class="form-group">
             <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="teacher_name" name="name">
+            <input type="text" class="form-control" id="name" name="name">
           </div>
            <div class="form-group">
             <label for="usr">Email:</label>
-            <input type="text" class="form-control" id="teacher_email" name="email">
+            <input type="text" class="form-control" id="email" name="email">
           </div>
            <div class="form-group">
             <label for="usr">Password:</label>
-            <input type="password" class="form-control" id="teacher_password" name="password">
+            <input type="password" class="form-control" id="password" name="password">
           </div>
           <div class="form-group">
             <label for="usr">Dob</label>
-            <input type="text" class="form-control" id="teacherDob" name="dob">
+            <input type="text" class="form-control" id="tdob" name="tdob">
           </div>
         <div class="modal-footer">
           <button type="submit"  class="btn btn-primary">Add Quiz</button>
@@ -67,9 +67,13 @@
       <td><?php echo $row->dob; ?></td>
       <td>
       <input type="hidden" name="id" value="<?php echo $row->id; ?>">
-      <button type="submit" name="block_teacher"  value="<?php  echo  $row->status; ?>" > 
-      <?php  echo ( $row->status ) ? 'Unblock' : 'block'; ?></button>
-      </td>
+       <td>
+           <a href="<?php echo base_url('admin/teachers/block?id='.$row->id); ?>" ><?php  echo ( $row->status ) ? 'Unblock' : 'Block'; ?></a>
+       </td>
+       <td>
+           <a data-toggle="modal" href="<?php echo base_url('admin/teachers/form/'.$row->id); ?>" >Update</a>
+       </td>
+       <td><a href="<?php echo base_url('admin/teachers/delete?id='.$row->id); ?>" >Delete</a></td>
     </tr>
   <?php endforeach;?>
   </tbody>

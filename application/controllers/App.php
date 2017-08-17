@@ -38,17 +38,17 @@ class App extends CI_Controller {
 				$currentTime =  Carbon::now('Asia/Kolkata');
 				for ($i=0; $i < 10; $i++) {
 		            $userData = array(
-				        'host_id' => 3,
-				        'class_id' => 1,
-				        'quiz_name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+				        'host_id' => 116,
+				        'class_id' => 3,
+				        'quiz_name' => 'PHP Quiz',
 				        'start_time' => $currentTime,
 				        'end_time' => $currentTime
 			        );
 				    $this->db->insert('quiz', $userData);	
 
 				     $userData = array(
-				        'host_id' => 3,
-				        'class_id' => 1,
+				        'host_id' => 118,
+				        'class_id' => 4,
 				        'quiz_name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
 				        'start_time' => $currentTime,
 				        'end_time' => $currentTime

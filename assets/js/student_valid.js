@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $("#quizForm").validate({
+  $("#student_valid").validate({
     rules : {
-      Student_name : {
+      name : {
         required : true
       },
       email : {
@@ -10,7 +10,7 @@ $(document).ready(function(){
       password : {
         required : true
       },
-      studentDob : {
+      dob : {
         required : true
       },
       roll_no : {
@@ -18,20 +18,20 @@ $(document).ready(function(){
       }
     },
     messages : {
-      Student_name : {
-        required : 'Please Enter Quiz name.'
+      name : {
+        required : 'Please Enter Student name.'
       },
       email : {
-        required : 'Please Select Host name.'
+        required : 'Please Select Email address.'
       },
       password : {
-        required : 'Please Select Class name.'
+        required : 'Please enter Password.'
       },
-      studentDob : {
-        required : 'Please Choose Start time.'
+      dob : {
+        required : 'Please Choose Date of Birth.'
       },
       roll_no : {
-        required : 'Please Choose End time.'
+        required : 'Please enter Roll No.'
          }
       }
    });

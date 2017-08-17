@@ -5,6 +5,8 @@
 <script src="<?php echo js('addQuiz_validate.js') ?>" type="text/javascript"></script>
 <!-- Datepicker -->
 <script src="<?php echo js('date_time.js') ?>" type="text/javascript"></script>
+<script src="<?php echo js('teacher_valid.js') ?>" type="text/javascript"></script>
+<script src="<?php echo js('student_valid.js') ?>" type="text/javascript"></script>
 
 
 
