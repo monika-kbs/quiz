@@ -9,11 +9,15 @@ $(document).ready(function(){
     jQuery('#start_time').datetimepicker();
     jQuery('#end_time').datetimepicker();
 
+    jQuery('#teacherDob').datetimepicker();
+	jQuery('#studentDob').datetimepicker();
+	
     $("#block_teacher").click(function(e){
     	$.post('teacher/teachers/blockTeacher', {name : $("#name").val()}, function(response, status, xhr) {
 			$("#response").text(response);
 		});
 	});
+
 
 });    
  

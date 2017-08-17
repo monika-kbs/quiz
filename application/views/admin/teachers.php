@@ -1,5 +1,5 @@
 <div class="container" id="modal-add-new">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add_new">Add New</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add_new">Add Teacher</button>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -7,23 +7,23 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add New Teacher</h4>
         </div>
-      <?php echo form_open('teacher/quiz/addQuiz', ['name' => 'addQuiz', 'id' => 'quizForm']); ?>
+      <?php echo form_open('admin/teachers/addTeacher', ['name' => 'addTeacher', 'id' => 'quizForm']); ?>
         <div class="modal-body">
           <div class="form-group">
             <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="teacher_name" name="name">
           </div>
            <div class="form-group">
             <label for="usr">Email:</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <input type="text" class="form-control" id="teacher_email" name="email">
           </div>
            <div class="form-group">
             <label for="usr">Password:</label>
-            <input type="text" class="form-control" id="password" name="password">
+            <input type="password" class="form-control" id="teacher_password" name="password">
           </div>
           <div class="form-group">
             <label for="usr">Dob</label>
-            <input type="text" class="form-control" id="dob" name="dob">
+            <input type="text" class="form-control" id="teacherDob" name="dob">
           </div>
         <div class="modal-footer">
           <button type="submit"  class="btn btn-primary">Add Quiz</button>

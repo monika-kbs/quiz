@@ -9,6 +9,21 @@ class Teachers extends App_Controller{
     public function index(){		
 	   return $this->render('admin/teachers');
     }
+    public function addTeacher() {
+       $data = array(
+        'name' =>  $this->input->post('name'),
+        'email' =>  $this->input->post('email'),
+        'password' => $this->input->post('password'),
+        'dob' => $this->input->post('dob')
+        );
+       echo "<pre>";
+       print_r($data);
+       echo "</pre>";
+       die;
+      $this->db->insert('users', $data);
+      return redirect(base_url() . 'teacher/quiz' ); 
+    }
+
     public function blockTeacher() {
         if(isset($_POST['block_teacher'])){ 
             echo $status = $this->input->post('block_teacher');
